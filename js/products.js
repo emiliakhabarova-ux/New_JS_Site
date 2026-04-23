@@ -1,64 +1,64 @@
 var products = [
      {
     id: 1,
-    name: "Sneakers 1",
-    category: "Nike",
+    name: "Nike",
+    category: "Sneakers 1",
     price: 4500,
     emoji: "🔥",
     desc: "Trendy sneakers with excellent cushioning and breathable materials for everyday comfort."
   },
   {
     id: 2,
-    name: "Sneakers 2",
-    category: "Adidas",
+    name: "Adidas 2",
+    category: "Sneakers 2",
     price: 4400,
     emoji: "✨",
     desc: "Stylish and comfortable sneakers with a lightweight sole and modern design."
   },
   {
     id: 3,
-    name: "Sneakers 3",
-    category: "Puma",
+    name: "Puma",
+    category: "Sneakers 3",
     price: 4000,
     emoji: "⚡",
     desc: "Lightweight sneakers perfect for active days and casual outfits."
   },
   {
     id: 4,
-    name: "Sneakers 4",
-    category: "New Balance",
+    name: "New Balance",
+    category: "Sneakers 4",
     price: 4300,
     emoji: "💫",
     desc: "Classic design with maximum comfort and support for long wear."
   },
   {
     id: 5,
-    name: "Sneakers 5",
-    category: "Reebok",
+    name: "Reebok",
+    category: "Sneakers 5",
     price: 3900,
     emoji: "💥",
     desc: "Durable and practical sneakers for everyday use."
   },
  {
   id: 6,
-  name: "Sneakers 6",
-  category: "Jordan",
+  name: "Jordan",
+  category: "Sneakers 6",
   price: 4600,
   emoji: "🚀",
   desc: "Premium sneakers with iconic design and great comfort for everyday wear."
 },
   {
     id: 7,
-    name: "Sneakers 7",
-    category: "Asics",
+    name: "Asics",
+    category: "Sneakers 7",
     price: 4200,
     emoji: "🌟",
     desc: "Perfect for running with excellent stability and comfort."
   },
   {
   id: 8,
-  name: "Sneakers 8",
-  category: "Skechers",
+  name: "Skechers",
+  category: "Sneakers 8",
   price: 4600,
   emoji: "🚀",
   desc: "Comfortable everyday sneakers with soft cushioning and a lightweight feel."
