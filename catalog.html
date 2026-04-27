@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sneakerhub - Каталог</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
         <div class="header-inner">
@@ -15,60 +16,71 @@
                 <a class="nav-btn active" href="index.html">Головна</a>
                 <a class="nav-btn" href="catalog.html">Каталог</a>
                 <a class="nav-btn" href="about.html">Про нас</a>
-                <a class="cart-btn" href="cart.html">
+                <a class="nav-btn" href="cart.html">
                     Кошик <span class="cart-count" id="cart-count">0</span>
                 </a>
             </nav>
         </div>
     </header>
- 
+
     <main>
         <div class="section">
-           <div class="section-title">Каталог товарів</div>
-           <div class="categories" id="categories"></div>
-           <div class="products-grid" id="catalog-grid"></div>
+            <div class="section-title">Каталог товарів</div>
+            <div class="categories" id="categories"></div>
+            <div class="products-grid" id="catalog-grid"></div>
         </div>
     </main>
- 
-    <footer>Sneakerhub - Супер!</footer>
- 
+
+    <footer>Sneakerhub - Супер пупер!</footer>
+
     <div class="toast" id="toast"></div>
- 
+
     <script src="js/products.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/utils.js"></script>
     <script>
         let activeCategory = "Усі";
- 
-function renderCatagories() {
-    let container = document.getElementById("categories");
-    container.innerHTML = "";
- 
-    let cats = ["Усі"];
-    for (let i = 0; i < products.length; i++) {
-        if (cats.indexOf(products[i].category) === -1) {
-            cats.push(products[i].category);
-        }
-    }
- 
-    for (let j = 0; j < cats.length; j++) {
-       
-    }
-}
- 
-function renderGrid() {
-    let container = document.getElementById("catalog-grid");
-    container.innerHTML = "";
 
-    for (let i = 0; i < products.length; i++) {
-        if (activeCategory === "Усі" || products[i].category === activeCategory) {
-            container.appendChild(createProductCard(products[i]));
+        function renderCategories() {
+            let container = document.getElementById("categories");
+            container.innerHTML = "";
+
+            let cats = ["Усі"];
+            for (let i = 0; i < products.length; i++) {
+                if (cats.indexOf(products[i].category) === -1) {
+                    cats.push(products[i].category);
+                }
+            }
+
+            for (let j = 0; j < cats.length; j++) {
+                var btn = document.createElement("button");
+                btn.className = "cat-btn" + (cats[j] === activeCategory ? " active" : "");
+                btn.textContent = cats[j];
+                btn.onclick = (function (c) {
+                    return function () {
+                        activeCategory = c;
+                        renderCategories();
+                        renderGrid();
+                    };
+                })(cats[j]);
+                container.appendChild(btn);
+            }
         }
-    }
-}
- 
-renderCatagories();
-renderGrid();
+
+        function renderGrid() {
+            let container = document.getElementById("catalog-grid");
+            container.innerHTML = "";
+
+            for (let i = 0; i < products.length; i++) {
+                if (activeCategory === "Усі" || products[i].category === activeCategory) {
+                    container.appendChild(createProductCard(products[i]));
+                }
+            }
+        }
+
+        renderCategories();
+        renderGrid();
     </script>
 </body>
+
 </html>
